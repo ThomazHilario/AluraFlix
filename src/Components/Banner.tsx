@@ -3,7 +3,7 @@ import Card from '../assets/card.png'
 
 export const Banner = () => {
     return(
-        <div style={{backgroundImage:`url(${BannerImg})`}} className=' hidden md:flex justify-center items-end w-full bg-no-repeat bg-cover shadow-banner bg-center'>
+        <div style={{backgroundImage:`url(${BannerImg})`}} className=' hidden md:flex justify-center items-end md:h-[600px] w-full bg-no-repeat bg-cover shadow-banner bg-center'>
             <section className='flex justify-between w-full gap-14 py-20 px-5'>
                 <div className='flex flex-col gap-14'>
                     <h1 className='bg-cyan-400 w-72 text-5xl px-2 py-5 text-center text-white font-bold rounded-lg'>FRONT END</h1>
@@ -16,7 +16,7 @@ export const Banner = () => {
                     </div>
                 </div>
 
-                <img className=' md:w-[400px] lg:w-[500px]' src={Card} alt="imagem do card" />
+                <img className=' md:w-[400px] md:h-[300px] lg:w-[500px] lg:h-auto' src={Card} alt="imagem do card" />
             </section>
         </div>
     )
