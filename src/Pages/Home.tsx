@@ -1,3 +1,10 @@
+// Components
+import { Banner } from "../Components/Banner"
+
 export const Home = () => {
-    return <h1>Hello world</h1>
+    return (
+        <main>
+            <Banner/>
+        </main>
+    )
 }

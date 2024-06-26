@@ -6,7 +6,7 @@ import AluraFlix_Logo from '../assets/logo-aluraflix.svg'
 
 export const Header = () => {
     return(
-        <header className="bg-black/90 flex justify-between items-center px-5 h-20">
+        <header className="bg-black/90 flex justify-between items-center px-5 h-[10vh]">
 
             <img src={AluraFlix_Logo} alt="Logo da AluraFlix"/>
 
