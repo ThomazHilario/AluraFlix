@@ -3,7 +3,7 @@ import { Banner } from "../Components/Banner"
 
 export const Home = () => {
     return (
-        <main>
+        <main className="bg-[#001233]">
             <Banner/>
         </main>
     )
