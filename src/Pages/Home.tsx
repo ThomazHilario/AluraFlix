@@ -6,10 +6,7 @@ import { Banner } from "../Components/Banner"
 import { SectionCategories } from "../Components/Section-Categories"
 
 // interface
-interface CategoryProps{
-    name:string,
-    color:string
-}
+import {PostsProps ,CategoryProps } from '../Interfaces/post-and-category'
 
 export const Home = () => {
 
@@ -60,7 +57,7 @@ export const Home = () => {
                             key={index} 
                             name={categoria.name} 
                             color={categoria.color}
-                            posts={posts.filter(post => post.categoria.toLowerCase() === categoria.name.toLowerCase())}
+                            posts={posts.filter((post:PostsProps) => post.categoria.toLowerCase() === categoria.name.toLowerCase())}
                         />
                     ))}
             </div>
