@@ -48,10 +48,10 @@ export const Home = () => {
     ])
 
     return (
-        <main className="bg-[#001233]">
+        <main className="bg-[#001233] h-screen md:h-auto">
             <Banner/>
 
-            <div className="flex flex-col gap-36 mt-10 px-[4.30rem] py-10 bg-[#191919]">
+            <div className="flex flex-col gap-36 md:mt-10 px-[4.30rem] py-10 bg-[#191919] h-full md:h-auto">
                     {categorias.map((categoria, index) => (
                         <SectionCategories 
                             key={index} 

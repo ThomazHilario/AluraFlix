@@ -1,6 +1,8 @@
 // Radix UI
 import * as ScrollArea from '@radix-ui/react-scroll-area'
 
+// Components
+import { Card } from './Card'
 
 // interface 
 import { PostsProps } from '../Interfaces/post-and-category'
@@ -13,14 +15,14 @@ interface SectionCategoriesProps{
 export const SectionCategories = ({name, color, posts}:SectionCategoriesProps) => {
     if(posts.length > 0){
         return(
-            <section className='flex flex-col gap-8 -mt-16'>
-                <h1 className={`text-4xl p-3 text-white text-center font-bold rounded-2xl w-72`} style={{backgroundColor:color}}>{name}</h1>
+            <section className='flex flex-col gap-8 md:-mt-16'>
+                <h1 className={`text-2xl md:text-4xl p-3 text-white text-center font-bold rounded-2xl md:w-72 w-auto`} style={{backgroundColor:color}}>{name}</h1>
     
                 <div className='flex justify-center'>
-                    <ScrollArea.Root className="w-[90vw] rounded shadow-[0_2px_10px] shadow-blackA4 bg-white">
+                    <ScrollArea.Root className="flex w-[90vw] h-full p-2 rounded bg-transparent">
                         <ScrollArea.Viewport className="flex w-full rounded">
-                            <div className='flex bg-black'>
-                                
+                            <div className='flex justify-evenly gap-5'>
+                                {posts.map((post,idx) => <Card key={idx} imagem={post.imagem} color={color}/>)}
                             </div>
                         </ScrollArea.Viewport>
                         <ScrollArea.Scrollbar
