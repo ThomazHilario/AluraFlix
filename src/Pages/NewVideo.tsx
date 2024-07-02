@@ -33,9 +33,9 @@ export const NewVideo = () => {
     // tailwindCss for inputsForms
     const inputsForms = 'flex flex-col gap-3'
     const inputStyle = 'bg-transparent border-[#262626] border-2 pl-5 py-3 rounded-md outline-none'
-    const inputStyleErrors = 'border-red-500'
+    const inputStyleErrors = 'border-red-500 placeholder-red-500'
     function handleSubmitVideoInDbJson(data:SchemaProps){
-
+        alert(`${data.titulo} /n ${data.categoria} /n ${data.imagem}`)
     }
 
     return(
