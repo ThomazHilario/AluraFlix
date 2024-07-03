@@ -17,6 +17,7 @@ export const Home = () => {
     
     // Fazer uma requisicao quando o componente renderizar
     useEffect(() => {
+
         async function loadPosts(){
             try {
                 const response = await fetch('http://localhost:3000/videos')
@@ -30,7 +31,11 @@ export const Home = () => {
             }
         }
 
-        loadPosts()
+        if(localStorage.getItem('posts') !== null){
+            setPosts(JSON.parse(localStorage.getItem('posts') as string))
+        } else{
+            loadPosts()
+        }
     },[setPosts])  
 
     // state - categorias

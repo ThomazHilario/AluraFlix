@@ -1,7 +1,7 @@
 export interface PostsProps{
     titulo:string,
     categoria:string,
-    dsecricao:string,
+    descricao:string | null,
     imagem:string,
     video:string
 }

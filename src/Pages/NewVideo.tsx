@@ -1,3 +1,7 @@
+// Context
+import { UseMyContext } from '../Context/context'
+
+// imports React-hook-form
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -28,14 +32,42 @@ const schema = z.object({
 
 export const NewVideo = () => {
 
-    const { register, handleSubmit, formState:{errors} } = useForm<SchemaProps>({resolver:zodResolver(schema)})
+    const { register, handleSubmit, formState:{errors}, reset } = useForm<SchemaProps>({resolver:zodResolver(schema)})
+
+    const {posts, setPosts} = UseMyContext()
 
     // tailwindCss for inputsForms
     const inputsForms = 'flex flex-col gap-3'
+
+    // tailwindCss for inputStyle
     const inputStyle = 'bg-transparent border-[#262626] border-2 pl-5 py-3 rounded-md outline-none'
+
+    // tailwindCss for inputStyleErros
     const inputStyleErrors = 'border-red-500 placeholder-red-500'
+
     function handleSubmitVideoInDbJson(data:SchemaProps){
-        alert(`${data.titulo} /n ${data.categoria} /n ${data.imagem}`)
+
+        const newPostsArray = [...posts, {
+            titulo:data.titulo,
+            categoria:data.categoria,
+            imagem:data.imagem,
+            video:data.video,
+            descricao:data.descricao
+        }]
+
+
+        // Criando um novo post
+        setPosts(newPostsArray)
+
+        // salvando o novo array de posts na localStorage
+        localStorage.setItem('posts',JSON.stringify(newPostsArray))
+
+        reset({
+            titulo: '',
+            imagem: '',
+            video: '',
+            descricao: ''
+        })
     }
 
     return(
@@ -61,8 +93,8 @@ export const NewVideo = () => {
                     <p className={inputsForms}>
                         <label className={`text-2xl ${errors.categoria && 'text-red-500'}`}>Categoria</label>
                         <select className={`${inputStyle} ${errors.categoria && inputStyleErrors}`} {...register('categoria')}>
-                            <option className='bg-[#191919]' value="Front-End">Front-end</option>
-                            <option className='bg-[#191919]' value="Back-End">Back-end</option>
+                            <option className='bg-[#191919]' value="Front-End">Front-End</option>
+                            <option className='bg-[#191919]' value="Back-End">Back-End</option>
                             <option className='bg-[#191919]' value="Mobile">Mobile</option>
                         </select>
                     </p>
