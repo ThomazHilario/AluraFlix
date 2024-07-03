@@ -1,6 +1,9 @@
 // React
 import { useState, useEffect } from "react"
 
+// Context
+import { UseMyContext } from "../Context/context"
+
 // Components
 import { Banner } from "../Components/Banner"
 import { SectionCategories } from "../Components/Section-Categories"
@@ -9,7 +12,9 @@ import { SectionCategories } from "../Components/Section-Categories"
 import {PostsProps ,CategoryProps } from '../Interfaces/post-and-category'
 
 export const Home = () => {
-
+    // state - posts
+    const {posts, setPosts} = UseMyContext()
+    
     // Fazer uma requisicao quando o componente renderizar
     useEffect(() => {
         async function loadPosts(){
@@ -26,10 +31,7 @@ export const Home = () => {
         }
 
         loadPosts()
-    },[])
-
-    // state - posts
-    const [posts, setPosts] = useState([])
+    },[setPosts])  
 
     // state - categorias
     const [categorias, setCategorias] = useState<CategoryProps[]>([
