@@ -71,7 +71,7 @@ export const NewVideo = () => {
     }
 
     return(
-        <main className="h-screen bg-[#191919] text-white flex flex-col items-center gap-10">
+        <main className="bg-[#191919] text-white flex flex-col items-center gap-10 py-10">
             <article className="text-center">
                 <h1 className="text-[4rem] font-bold">novo vídeo</h1>
                 <p className="text-lg">Complete o formulário para criar um novo card de vídeo.</p>
