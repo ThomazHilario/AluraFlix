@@ -55,7 +55,7 @@ export const Home = () => {
     ])
 
     return (
-        <main className="bg-[#001233] h-screen md:h-auto">
+        <main className="bg-[#001233] md:h-auto">
             <Banner/>
 
             <div className="flex flex-col gap-36 md:mt-10 px-[4.30rem] py-10 bg-[#191919] h-full md:h-auto">

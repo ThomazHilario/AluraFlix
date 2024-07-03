@@ -21,7 +21,7 @@ export const SectionCategories = ({name, color, posts}:SectionCategoriesProps) =
                 <div className='flex justify-center'>
                     <ScrollArea.Root className="flex w-[90vw] h-full p-2 rounded bg-transparent">
                         <ScrollArea.Viewport className="flex w-full rounded">
-                            <div className='flex justify-evenly gap-5'>
+                            <div className='flex gap-5'>
                                 {posts.map((post,idx) => <Card key={idx} imagem={post.imagem} color={color}/>)}
                             </div>
                         </ScrollArea.Viewport>
