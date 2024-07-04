@@ -45,29 +45,41 @@ export const NewVideo = () => {
     // tailwindCss for inputStyleErros
     const inputStyleErrors = 'border-red-500 placeholder-red-500'
 
-    function handleSubmitVideoInDbJson(data:SchemaProps){
+    async function handleSubmitVideoInDbJson(data:SchemaProps){
+        try {
 
-        const newPostsArray = [...posts, {
-            titulo:data.titulo,
-            categoria:data.categoria,
-            imagem:data.imagem,
-            video:data.video,
-            descricao:data.descricao
-        }]
+            // objeto do novo post
+            const newPost = {
+                id:crypto.randomUUID(),
+                titulo:data.titulo,
+                categoria:data.categoria,
+                imagem:data.imagem,
+                video:data.video,
+                descricao:data.descricao
+            }
+            
+            await fetch('http://localhost:3000/videos',{
+                method: "POST",
+                body: JSON.stringify(newPost),
+                headers: {
+                  "Content-type": "application/json; charset=UTF-8"
+                }
+              });
 
-
-        // Criando um novo post
-        setPosts(newPostsArray)
-
-        // salvando o novo array de posts na localStorage
-        localStorage.setItem('posts',JSON.stringify(newPostsArray))
-
-        reset({
-            titulo: '',
-            imagem: '',
-            video: '',
-            descricao: ''
-        })
+    
+    
+            // Criando um novo post
+            setPosts([...posts, newPost])
+    
+            reset({
+                titulo: '',
+                imagem: '',
+                video: '',
+                descricao: ''
+            })
+        } catch (e) {
+            console.log(e)
+        }
     }
 
     return(

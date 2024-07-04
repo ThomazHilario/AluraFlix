@@ -1,25 +1,28 @@
 {
-    "videos":[
-        {
-            "titulo":"Como criar um projeto em React e Typescript para seu Portfólio? | Hipsters: Portfólio Dev",
-            "categoria":"Front-End",
-            "descricao":"Aprenda a criar um projeto em React e Typescript do zero para incluir no seu Portfólio Dev",
-            "imagem":"https://i.ytimg.com/vi/NpS2PksdMCc/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDzINBbg15sfYWdCPgde_cTRQenDA",
-            "video":"https://www.youtube.com/watch?v=NpS2PksdMCc&list=PLh2Y_pKOa4UddwTMZhqQLj_1M_g-_fUXY&index=9"
-        },
-        {
-            "titulo":"O que faz uma desenvolvedora front-end?",
-            "categoria":"Front-End",
-            "descricao":"O que é Front-end? Trabalhando na área os termos HTML, CSS e JavaScript fazem parte da rotina das desenvolvedoras e desenvolvedores. Mas o que eles fazem, afinal? Descubra com a Vanessa nesse episódio! ",
-            "imagem":"https://i.ytimg.com/vi/ZY3-MFxVdEw/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLD0xl4ufLa9X7N6QnQQp8y_rgppMQ",
-            "video":"https://www.youtube.com/watch?v=ZY3-MFxVdEw&list=PLh2Y_pKOa4UddwTMZhqQLj_1M_g-_fUXY&index=8"
-        },
-        {
-            "titulo":"Ecossistema React JS com Charles Assunção",
-            "categoria":"Front-End",
-            "descricao":"Fique por dentro das novas bibliotecas de React JS, o uso de componentes, as conhecidas Redux e GraphQL, além da discussão sobre o ciclo de vida no Front-End.este #HipstersPontoTube o host Paulo Silveira convida Charles Assunção para um bate papo mega interessante sobre ecossistema react. Entenda como utilizar a ferramenta e muito mais ",
-            "imagem":"https://i.ytimg.com/vi/F5As-8hWNIQ/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDy0NX1Yyt-j-69jAlxJ--wQazjlQ",
-            "video":"https://www.youtube.com/watch?v=F5As-8hWNIQ&list=PLh2Y_pKOa4UddwTMZhqQLj_1M_g-_fUXY&index=12"
-        }
-    ]
+  "videos": [
+    {
+      "id": "ed12c8ac-76b4-49e8-a851-c43610996271",
+      "titulo": "Como criar um projeto em React e Typescript para seu Portfólio? | Hipsters: Portfólio Dev",
+      "categoria": "Front-End",
+      "imagem": "https://i.ytimg.com/vi/NpS2PksdMCc/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDzINBbg15sfYWdCPgde_cTRQenDA",
+      "video": "https://www.youtube.com/watch?v=NpS2PksdMCc&list=PLh2Y_pKOa4UddwTMZhqQLj_1M_g-_fUXY&index=9",
+      "descricao": "Aprenda a criar um projeto em React e Typescript do zero para incluir no seu Portfólio Dev"
+    },
+    {
+      "id": "1d4a59c9-be05-4fb3-b84b-5f2fcefea169",
+      "titulo": "O que faz uma desenvolvedora front-end?",
+      "categoria": "Front-End",
+      "imagem": "https://i.ytimg.com/vi/ZY3-MFxVdEw/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLD0xl4ufLa9X7N6QnQQp8y_rgppMQ",
+      "video": "https://www.youtube.com/watch?v=ZY3-MFxVdEw&list=PLh2Y_pKOa4UddwTMZhqQLj_1M_g-_fUXY&index=8",
+      "descricao": "O que é Front-end? Trabalhando na área os termos HTML, CSS e JavaScript fazem parte da rotina das desenvolvedoras e desenvolvedores. Mas o que eles fazem, afinal?"
+    },
+    {
+      "id": "9823203d-d6ed-48b0-bb1c-6c07ebd3a82b",
+      "titulo": "Ecossistema React JS com Charles Assunção",
+      "categoria": "Front-End",
+      "imagem": "https://i.ytimg.com/vi/F5As-8hWNIQ/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDy0NX1Yyt-j-69jAlxJ--wQazjlQ",
+      "video": "https://www.youtube.com/watch?v=F5As-8hWNIQ&list=PLh2Y_pKOa4UddwTMZhqQLj_1M_g-_fUXY&index=12",
+      "descricao": "Fique por dentro das novas bibliotecas de React JS, o uso de componentes, as conhecidas Redux e GraphQL, além da discussão sobre o ciclo de vida no Front-End.este #HipstersPontoTube o host Paulo Silveira convida Charles Assunção para um bate papo mega interessante sobre ecossistema react. Entenda como utilizar a ferramenta e muito mais"
+    }
+  ]
 }

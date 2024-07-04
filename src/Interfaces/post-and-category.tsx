@@ -1,4 +1,5 @@
 export interface PostsProps{
+    id:string,
     titulo:string,
     categoria:string,
     descricao:string | null,

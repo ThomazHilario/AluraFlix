@@ -22,7 +22,7 @@ export const SectionCategories = ({name, color, posts}:SectionCategoriesProps) =
                     <ScrollArea.Root className="flex w-[90vw] h-full p-2 rounded bg-transparent">
                         <ScrollArea.Viewport className="flex w-full rounded">
                             <div className='flex gap-5'>
-                                {posts.map((post,idx) => <Card key={idx} imagem={post.imagem} color={color}/>)}
+                                {posts.map((post,idx) => <Card key={idx} id={post.id} imagem={post.imagem} color={color}/>)}
                             </div>
                         </ScrollArea.Viewport>
                         <ScrollArea.Scrollbar

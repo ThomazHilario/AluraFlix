@@ -1,5 +1,5 @@
 // React
-import { useState, useEffect } from "react"
+import { useEffect } from "react"
 
 // Context
 import { UseMyContext } from "../Context/context"
@@ -31,15 +31,12 @@ export const Home = () => {
             }
         }
 
-        if(localStorage.getItem('posts') !== null){
-            setPosts(JSON.parse(localStorage.getItem('posts') as string))
-        } else{
-            loadPosts()
-        }
+        loadPosts()
+        
     },[setPosts])  
 
     // state - categorias
-    const [categorias, setCategorias] = useState<CategoryProps[]>([
+    const categorias:CategoryProps[] = [
         {
             name:'Front-End',
             color:'#6BD1FF'
@@ -52,7 +49,7 @@ export const Home = () => {
             name:'Mobile',
             color:'#FFBA05'
         }
-    ])
+    ]
 
     return (
         <main className="min-h-full bg-[#191919] md:bg-[#001233] md:h-auto">
