@@ -1,6 +1,9 @@
 // context
 import { UseMyContext } from '../Context/context'
 
+// Components
+import { Modal } from './Modal-card'
+
 // interfaces
 interface CardProps{
     id:string,
@@ -9,7 +12,7 @@ interface CardProps{
 }
 
 // Lucide-React
-import { PencilLine, Trash2 } from 'lucide-react'
+import { Trash2 } from 'lucide-react'
 
 export const Card = ({id, imagem, color}:CardProps) => {
 
@@ -44,9 +47,7 @@ export const Card = ({id, imagem, color}:CardProps) => {
                     <Trash2 {...iconProps}/> Deletar
                 </button>
 
-                <button className='flex items-center gap-3 text-xl'>
-                    <PencilLine {...iconProps}/> Editar
-                </button>
+                <Modal iconProps={iconProps}/>
             </section>
         </article>
     )
