@@ -52,7 +52,7 @@ export const Home = () => {
     ]
 
     return (
-        <main className="min-h-full bg-[#191919] md:bg-[#001233] md:h-auto">
+        <main className="h-screen bg-[#191919] md:bg-[#001233] md:h-auto">
             <Banner/>
 
             <div className="flex flex-col gap-36 md:mt-10 px-[4.30rem] py-10 bg-[#191919] md:h-auto">
