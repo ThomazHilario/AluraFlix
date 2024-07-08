@@ -7,17 +7,35 @@ import { Modal } from './Modal-card'
 // interfaces
 interface CardProps{
     id:string,
+    titulo:string,
+    categoria:string,
+    video:string,
     imagem:string,
+    descricao:string | null,
     color:string
 }
 
 // Lucide-React
 import { Trash2 } from 'lucide-react'
 
-export const Card = ({id, imagem, color}:CardProps) => {
+export const Card = ({id, titulo, categoria, descricao, video ,imagem, color}:CardProps) => {
 
     // Context - state
     const { posts, setPosts } = UseMyContext()
+
+    // EditCard
+    async function editCard(){
+        try {
+            await fetch(`http://localhost:3000/${id}`,{
+                method:'PUT',
+                body:JSON.stringify({
+                    
+                })
+            })
+        } catch (e) {
+            console.log(e)
+        }
+    }
 
     // deleteCard
     async function deleteCard(){
@@ -47,7 +65,14 @@ export const Card = ({id, imagem, color}:CardProps) => {
                     <Trash2 {...iconProps}/> Deletar
                 </button>
 
-                <Modal iconProps={iconProps}/>
+                <Modal 
+                    iconProps={iconProps}
+                    titulo={titulo}
+                    categoria={categoria}
+                    descricao={descricao}
+                    video={video}
+                    imagem={imagem}
+                />
             </section>
         </article>
     )
