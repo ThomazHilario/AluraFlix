@@ -23,20 +23,6 @@ export const Card = ({id, titulo, categoria, descricao, video ,imagem, color}:Ca
     // Context - state
     const { posts, setPosts } = UseMyContext()
 
-    // EditCard
-    async function editCard(){
-        try {
-            await fetch(`http://localhost:3000/${id}`,{
-                method:'PUT',
-                body:JSON.stringify({
-                    
-                })
-            })
-        } catch (e) {
-            console.log(e)
-        }
-    }
-
     // deleteCard
     async function deleteCard(){
         try {
@@ -67,6 +53,7 @@ export const Card = ({id, titulo, categoria, descricao, video ,imagem, color}:Ca
 
                 <Modal 
                     iconProps={iconProps}
+                    id={id}
                     titulo={titulo}
                     categoria={categoria}
                     descricao={descricao}
