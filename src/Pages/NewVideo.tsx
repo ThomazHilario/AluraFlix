@@ -85,13 +85,13 @@ export const NewVideo = () => {
     return(
         <main className="bg-[#191919] text-white flex flex-col items-center gap-10 py-10">
             <article className="text-center">
-                <h1 className="text-[4rem] font-bold">novo vídeo</h1>
-                <p className="text-lg">Complete o formulário para criar um novo card de vídeo.</p>
+                <h1 className="text-5xl sm:text-6xl font-bold">Novo Vídeo</h1>
+                <p className="text-lg mt-2">Complete o formulário para criar um novo card de vídeo.</p>
             </article>
 
             <section className="w-[80vw]">
                 <h2 className="text-4xl w-full border-y-4 border-[#262626] py-3">Criar Card</h2>
-                <form className='mt-5 grid grid-cols-2 gap-5' onSubmit={handleSubmit(handleSubmitVideoInDbJson)}>
+                <form className='flex flex-col gap-5 mt-5 md:grid grid-cols-2' onSubmit={handleSubmit(handleSubmitVideoInDbJson)}>
                     <p className={inputsForms}>
                         <label className={`text-2xl ${errors.titulo && 'text-red-500'}`}>Titulo</label>
                         <input 
