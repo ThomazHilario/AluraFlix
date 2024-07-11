@@ -9,11 +9,11 @@ import { Banner } from "../Components/Banner"
 import { SectionCategories } from "../Components/Section-Categories"
 
 // interface
-import {PostsProps ,CategoryProps } from '../Interfaces/post-and-category'
+import {PostsProps} from '../Interfaces/post-and-category'
 
 export const Home = () => {
     // state - posts
-    const {posts, setPosts} = UseMyContext()
+    const {posts, setPosts, categorias} = UseMyContext()
     
     // Fazer uma requisicao quando o componente renderizar
     useEffect(() => {
@@ -34,22 +34,6 @@ export const Home = () => {
         loadPosts()
         
     },[setPosts])  
-
-    // state - categorias
-    const categorias:CategoryProps[] = [
-        {
-            name:'Front-End',
-            color:'#6BD1FF'
-        },
-        {
-            name:'Back-End',
-            color:'#00C86F'
-        },
-        {
-            name:'Mobile',
-            color:'#FFBA05'
-        }
-    ]
 
     return (
         <main className="h-screen bg-[#191919] md:bg-[#001233] md:h-auto">
