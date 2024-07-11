@@ -3,6 +3,21 @@ import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 
+// schema
+const schema = z.object({
+    titulo:z.string(),
+    categoria:z.string(),
+    imagem:z.string(),
+    video:z.string(),
+    descricao:z.string()
+}).required({
+    titulo:true,
+    categoria:true,
+    imagem:true,
+    video:true,
+    descricao:true
+})
+
 // Radix
 import * as Dialog from '@radix-ui/react-dialog'
 
@@ -33,22 +48,16 @@ interface FormProps{
     descricao:string | null
 }
 
-// schema
-const schema = z.object({
-    titulo:z.string(),
-    categoria:z.string(),
-    imagem:z.string(),
-    video:z.string(),
-    descricao:z.string()
-}).required({
-    titulo:true,
-    categoria:true,
-    imagem:true,
-    video:true,
-    descricao:true
-})
+// Context
+import { UseMyContext } from '../Context/context'
 
 export const Modal = ({iconProps, id, titulo, categoria, imagem, video, descricao}: ModalProps) => {
+
+    // Context - Categorias
+    const { categorias } = UseMyContext()
+
+    // CategoriasName
+    const categoriasName = categorias.map((item) => item.name)
 
     // Desestruturando o useForm
     const { register, handleSubmit } = useForm<FormProps>({resolver:zodResolver(schema)})
@@ -116,9 +125,9 @@ export const Modal = ({iconProps, id, titulo, categoria, imagem, video, descrica
                                     className='p-1 border-[#2271D1] border-2 rounded-md bg-transparent'
                                     {...register('categoria',{value:categoria})}
                                 >
-                                    <option value="Front-End">Front-End</option>
-                                    <option value="Back-End">Back-End</option>
-                                    <option value="Mobile">Mobile</option>
+                                    {categoriasName.map((categoria, idx) => (
+                                        <option value={categoria} key={idx}>{categoria}</option>
+                                    ))}
                                 </select>
                             </p>
 

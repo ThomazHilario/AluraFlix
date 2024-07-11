@@ -34,7 +34,11 @@ export const NewVideo = () => {
 
     const { register, handleSubmit, formState:{errors}, reset } = useForm<SchemaProps>({resolver:zodResolver(schema)})
 
-    const {posts, setPosts} = UseMyContext()
+    // Context - states
+    const {posts, setPosts, categorias} = UseMyContext()
+
+    // CategoriasArrayNames
+     const categoriasArrayNames = categorias.map((item) => item.name)
 
     // tailwindCss for inputsForms
     const inputsForms = 'flex flex-col gap-3'
@@ -105,9 +109,13 @@ export const NewVideo = () => {
                     <p className={inputsForms}>
                         <label className={`text-2xl ${errors.categoria && 'text-red-500'}`}>Categoria</label>
                         <select className={`${inputStyle} ${errors.categoria && inputStyleErrors}`} {...register('categoria')}>
-                            <option className='bg-[#191919]' value="Front-End">Front-End</option>
-                            <option className='bg-[#191919]' value="Back-End">Back-End</option>
-                            <option className='bg-[#191919]' value="Mobile">Mobile</option>
+                            {categoriasArrayNames.map((categoria, idx) => (
+                                <option 
+                                    className='bg-[#191919]' 
+                                    key={idx} value={categoria}>
+                                        {categoria}
+                                </option>
+                            ))}
                         </select>
                     </p>
 
