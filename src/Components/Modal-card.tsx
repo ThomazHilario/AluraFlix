@@ -22,7 +22,7 @@ const schema = z.object({
 import * as Dialog from '@radix-ui/react-dialog'
 
 // Lucide-React
-import { PencilLine } from 'lucide-react'
+import { PencilLine, X } from 'lucide-react'
 import { VisuallyHidden } from '@radix-ui/themes'
 // interfaces
 interface LucideIconsProps{
@@ -65,6 +65,12 @@ export const Modal = ({iconProps, id, titulo, categoria, imagem, video, descrica
     // ContainerIInputStyle
     const containerInput = 'flex flex-col gap-1 w-72'
 
+    // inputStyle
+    const inputStyle = 'resize-none p-1 border-[#2271D1] border-2 rounded-md bg-transparent' 
+
+    // buttonFormStyle
+    const buttonFormStyle = 'text-white border-2 border-[#2271D1] px-7 py-2 rounded-md'
+
     // EditCard
     async function editCard(data:FormProps){
         try {
@@ -100,6 +106,10 @@ export const Modal = ({iconProps, id, titulo, categoria, imagem, video, descrica
                     <section className='bg-[#03122F] text-white h-[85vh] flex flex-col justify-center items-center gap-10 w-[100vw] md:w-[80vw] lg:w-[60vw] xl:w-[50vw] md:px-[9rem] rounded-md border-4 border-[#6BD1FF]'>
                         <Dialog.Title className='text-6xl'>Editar Card</Dialog.Title>
 
+                        <Dialog.Close className='absolute top-2 right-2'>
+                            <X {...iconProps}/>
+                        </Dialog.Close>
+
                         <VisuallyHidden>
                             <Dialog.Description>
                                 Formulário para editar informações do card.
@@ -113,7 +123,7 @@ export const Modal = ({iconProps, id, titulo, categoria, imagem, video, descrica
                             <p className={containerInput}>
                                 <label>Titulo</label>
                                 <input 
-                                    className='p-1 border-[#2271D1] border-2 rounded-md bg-transparent' 
+                                    className={inputStyle} 
                                     type="text" 
                                     {...register('titulo',{value:titulo})}
                                 />
@@ -122,7 +132,7 @@ export const Modal = ({iconProps, id, titulo, categoria, imagem, video, descrica
                             <p className={containerInput}>
                                 <label>Categoria</label>
                                 <select  
-                                    className='p-1 border-[#2271D1] border-2 rounded-md bg-transparent'
+                                    className={inputStyle}
                                     {...register('categoria',{value:categoria})}
                                 >
                                     {categoriasName.map((categoria, idx) => (
@@ -134,7 +144,7 @@ export const Modal = ({iconProps, id, titulo, categoria, imagem, video, descrica
                             <p className={containerInput}>
                                 <label>Imagem</label>
                                 <input 
-                                    className='p-1 border-[#2271D1] border-2 rounded-md bg-transparent' 
+                                    className={inputStyle} 
                                     type="text" 
                                     {...register('imagem',{value:imagem})}
                                 />
@@ -143,7 +153,7 @@ export const Modal = ({iconProps, id, titulo, categoria, imagem, video, descrica
                             <p className={containerInput}>
                                 <label>Video</label>
                                 <input 
-                                    className='p-1 border-[#2271D1] border-2 rounded-md bg-transparent' 
+                                    className={inputStyle} 
                                     type="text" 
                                     {...register('video',{value:video})}
                                 />
@@ -152,15 +162,15 @@ export const Modal = ({iconProps, id, titulo, categoria, imagem, video, descrica
                             <p className={containerInput}>
                                 <label>Descrição</label>
                                 <textarea 
-                                    className='resize-none p-1 border-[#2271D1] border-2 rounded-md bg-transparent'
+                                    className={inputStyle}
                                     {...register('descricao',{value:descricao ? descricao : ''})}
                                 >    
                                 </textarea>
                             </p>
 
                             <div className='flex justify-between w-full'>
-                                <button type='submit'>Editar</button>
-                                <button type='reset'>Limpar</button>
+                                <button className={buttonFormStyle} type='submit'>Editar</button>
+                                <button className={buttonFormStyle} type='reset'>Limpar</button>
                             </div>
                         </form>
                     </section>
