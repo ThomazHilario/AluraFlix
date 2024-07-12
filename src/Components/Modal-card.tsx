@@ -136,7 +136,7 @@ export const Modal = ({iconProps, id, titulo, categoria, imagem, video, descrica
                                     {...register('categoria',{value:categoria})}
                                 >
                                     {categoriasName.map((categoria, idx) => (
-                                        <option value={categoria} key={idx}>{categoria}</option>
+                                        <option className='bg-[#191919]' value={categoria} key={idx}>{categoria}</option>
                                     ))}
                                 </select>
                             </p>
