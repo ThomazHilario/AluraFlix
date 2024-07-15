@@ -38,7 +38,10 @@ export const NewVideo = () => {
     const {posts, setPosts, categorias} = UseMyContext()
 
     // CategoriasArrayNames
-     const categoriasArrayNames = categorias.map((item) => item.name)
+    const categoriasArrayNames = categorias.map((item) => item.name)
+
+    // labelsStyle
+    const labelsStyle = `text-2xl ${errors.titulo && 'text-red-500'}`
 
     // tailwindCss for inputsForms
     const inputsForms = 'flex flex-col gap-3'
@@ -97,7 +100,7 @@ export const NewVideo = () => {
                 <h2 className="text-4xl w-full border-y-4 border-[#262626] py-3">Criar Card</h2>
                 <form className='flex flex-col gap-5 mt-5 md:grid grid-cols-2' onSubmit={handleSubmit(handleSubmitVideoInDbJson)}>
                     <p className={inputsForms}>
-                        <label className={`text-2xl ${errors.titulo && 'text-red-500'}`}>Titulo</label>
+                        <label className={labelsStyle}>Titulo</label>
                         <input 
                             className={`${inputStyle} ${errors.titulo && inputStyleErrors}`} 
                             type='text' 
@@ -107,7 +110,7 @@ export const NewVideo = () => {
                     </p>
 
                     <p className={inputsForms}>
-                        <label className={`text-2xl ${errors.categoria && 'text-red-500'}`}>Categoria</label>
+                        <label className={labelsStyle}>Categoria</label>
                         <select className={`${inputStyle} ${errors.categoria && inputStyleErrors}`} {...register('categoria')}>
                             {categoriasArrayNames.map((categoria, idx) => (
                                 <option 
@@ -120,7 +123,7 @@ export const NewVideo = () => {
                     </p>
 
                     <p className={inputsForms}>
-                        <label className={`text-2xl ${errors.imagem && 'text-red-500'}`}>imagem</label>
+                        <label className={labelsStyle}>imagem</label>
                         <input 
                             className={`${inputStyle} ${errors.imagem && inputStyleErrors}`} 
                             type='text' 
@@ -130,7 +133,7 @@ export const NewVideo = () => {
                     </p>
 
                     <p className={inputsForms}>
-                        <label className={`text-2xl ${errors.video && 'text-red-500'}`}>Video</label>
+                        <label className={labelsStyle}>Video</label>
                         <input 
                             className={`${inputStyle} ${errors.video && inputStyleErrors}`} 
                             type='text' 
@@ -140,7 +143,7 @@ export const NewVideo = () => {
                     </p>
 
                     <p className={inputsForms}>
-                        <label className={`text-2xl ${errors.descricao && 'text-red-500'}`}>Descricao</label>
+                        <label className={labelsStyle}>Descricao</label>
                         <textarea 
                             className={`${inputStyle} ${errors.descricao && inputStyleErrors}`} 
                             {...register('descricao')}
