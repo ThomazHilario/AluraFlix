@@ -103,7 +103,7 @@ export const Modal = ({iconProps, id, titulo, categoria, imagem, video, descrica
             </Dialog.Trigger>
             <Dialog.Portal>
                 <Dialog.Content className='absolute top-1/2 left-1/2 -translate-y-1/2 md:-translate-y-[5%] -translate-x-1/2'>
-                    <section className='bg-[#03122F] text-white h-[85vh] flex flex-col justify-center items-center gap-10 w-[100vw] md:w-[80vw] lg:w-[60vw] xl:w-[50vw] md:px-[9rem] rounded-md border-4 border-[#6BD1FF]'>
+                    <section className='bg-[#03122F] py-6 text-white h-auto flex flex-col justify-center items-center gap-10 w-[100vw] md:w-[80vw] lg:w-[60vw] xl:w-[50vw] md:px-[9rem] rounded-md border-4 border-[#6BD1FF]'>
                         <Dialog.Title className='text-6xl'>Editar Card</Dialog.Title>
 
                         <Dialog.Close className='absolute top-2 right-2'>
